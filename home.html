@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OnNutri</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="nutricionista.ico.png" type="image/x-icon">
+</head>
+
+<body>
+  <header>
+    <div id="cabecalho"> 
+        <h1 id="nome">OnNutri Online</h1>
+        <h2 id="lema"><em>Acenda seu potencial</em></h2>
+        <a href="home.html" class="links">Home</a>
+        <a href="sobre.html" class="links">Quem Somos</a>
+        <a href="contato.html" class="links">Fale Conosco</a>
+    </div>
+  </header>
+
+  <form onsubmit="calcular(event)">
+    <div class="form">
+      <!-- <input type="text" placeholder="Nome" name="nome" required> -->
+      <strong>Idade</strong>
+      <input type="number" placeholder="Idade" name="idade" class="input-number" required>
+      <strong>Peso</strong>
+      <input type="number" placeholder="Peso em kg" name="peso" class="input-number" required>
+      <strong>Altura</strong>
+      <input type="number" placeholder="Altura em cm" name="altura" class="input-number" required>
+      <div class="input-radio">
+        <strong>Sexo</strong>
+        <div>
+          <input type="radio" name="sexo" value="feminino" required>
+          <label for="feminino">Feminino</label>
+        </div>
+        <div>
+          <input type="radio" name="sexo" value="masculino" required>
+          <label for="masculino">Masculino</label>
+        </div>
+      </div>
+      
+      <div class="input-radio">
+        <strong>Intensidade da rotina</strong>
+        <div>
+          <input type="radio" name="atividade" value="baixa" required>
+          <label for="baixa">Baixa</label>
+        </div>
+        <div>
+          <input type="radio" name="atividade" value="media" required>
+          <label for="media">Média</label>
+        </div>
+        <div>
+          <input type="radio" name="atividade" value="intensa" required>
+          <label for="intensa">Intensa</label>
+        </div>
+      </div>
+
+      <div class="input-radio">
+        <strong>Objetivo</strong>
+        <div>
+          <input type="radio" name="objetivo" value="emagrecer" required>
+          <label for="emagrecer">Emagrecer</label>
+        </div>
+        <div>
+          <input type="radio" name="objetivo" value="hipertrofia" required>
+          <label for="hipertrofia">Hipertrofia</label>
+        </div>
+      </div>
+
+      <div class="input-radio">
+        <strong>Restrições alimentares</strong>
+        <div>
+          <input type="checkbox" name="vegetariano" value="vegetariano" id="">
+          <label for="vegetariano">Dieta vegetariana</label>
+        </div>
+        <div>
+          <input type="checkbox" name="vegano" value="vegano" id="a">
+          <label for="vegetariano">Dieta vegana</label>
+        </div>
+        <div>
+          <input type="checkbox" name="lactose" value="lactose" id="">
+          <label for="vegetariano">Intolerância à lactose</label>
+        </div>
+        <div>
+          <input type="checkbox" name="gluten" value="gluten" id="">
+          <label for="vegetariano">Intolerância à glúten</label>
+        </div>
+      </div>
+      <button>CALCULAR</button>
+    </div>
+  </form>
+
+  <div class="tabelas remover">
+    <div class="results"></div>
+    <div class="tabela-normal remover">
+      <strong>Tabela</strong>
+      <div style="overflow-x:auto;">
+        <table>
+          <tr>
+            <th>Alimento</th>
+            <th>Porção (g)</th>
+            <th>Calorias (kcal)</th>
+            <th>Proteínas (g)</th>
+            <th>Carboidratos (g)</th>
+            <th>Gorduras (g)</th>
+          </tr>
+          <tr>
+            <td>Arroz (cozido)</td>
+            <td>100</td>
+            <td>130</td>
+            <td>2.4</td>
+            <td>28</td>
+            <td>0.3</td>
+          </tr>
+          <tr>
+            <td>Feijão (cozido)</td>
+            <td>100</td>
+            <td>116</td>
+            <td>7.5</td>
+            <td>20.4</td>
+            <td>0.8</td>
+          </tr>
+          <tr>
+            <td>Frango (peito, sem pele)</td>
+            <td>100</td>
+            <td>165</td>
+            <td>31</td>
+            <td>0</td>
+            <td>3.6</td>
+          </tr>
+          <tr>
+            <td>Peixe (salmão, assado)</td>
+            <td>100</td>
+            <td>206</td>
+            <td>22</td>
+            <td>0</td>
+            <td>13</td>
+          </tr>
+          <tr>
+            <td>Carne bovina magra (cozida)</td>
+            <td>100</td>
+            <td>250</td>
+            <td>26</td>
+            <td>0</td>
+            <td>15</td>
+          </tr>
+          <tr>
+            <td>Ovo (cozido)</td>
+            <td>50</td>
+            <td>78</td>
+            <td>6.3</td>
+            <td>0.6</td>
+            <td>5.3</td>
+          </tr>
+          <tr>
+            <td>Leite (desnatado)</td>
+            <td>100</td>
+            <td>35</td>
+            <td>3.4</td>
+            <td>4.8</td>
+            <td>0.2</td>
+          </tr>
+          <tr>
+            <td>Maçã</td>
+            <td>182</td>
+            <td>52</td>
+            <td>0.3</td>
+            <td>14</td>
+            <td>0.2</td>
+          </tr>
+          <tr>
+            <td>Banana</td>
+            <td>118</td>
+            <td>89</td>
+            <td>1.1</td>
+            <td>23</td>
+            <td>0.3</td>
+          </tr>
+          <tr>
+            <td>Brócolis (cozido)</td>
+            <td>100</td>
+            <td>55</td>
+            <td>4.7</td>
+            <td>6</td>
+            <td>0.6</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="tabela-vegetariano remover">
+      <strong>Tabela vegetariana</strong>
+      <div style="overflow-x:auto;">
+        <table>
+          <tr>
+            <th>Alimento</th>
+            <th>Porção (g)</th>
+            <th>Calorias (kcal)</th>
+            <th>Proteínas (g)</th>
+            <th>Carboidratos (g)</th>
+            <th>Gorduras (g)</th>
+          </tr>
+          <tr>
+            <td>Arroz integral (cozido)</td>
+            <td>100</td>
+            <td>123</td>
+            <td>2.6</td>
+            <td>25.6</td>
+            <td>0.9</td>
+          </tr>
+          <tr>
+            <td>Feijão preto (cozido)</td>
+            <td>100</td>
+            <td>132</td>
+            <td>8.7</td>
+            <td>23.8</td>
+            <td>0.5</td>
+          </tr>
+          <tr>
+            <td>Grão-de-bico (cozido)</td>
+            <td>100</td>
+            <td>164</td>
+            <td>8.9</td>
+            <td>27.4</td>
+            <td>2.6</td>
+          </tr>
+          <tr>
+            <td>Lentilha (cozida)</td>
+            <td>100</td>
+            <td>116</td>
+            <td>9</td>
+            <td>20</td>
+            <td>0.4</td>
+          </tr>
+          <tr>
+            <td>Tofu</td>
+            <td>100</td>
+            <td>76</td>
+            <td>8</td>
+            <td>1.9</td>
+            <td>4.8</td>
+          </tr>
+          <tr>
+            <td>Ovo (cozido)</td>
+            <td>50</td>
+            <td>78</td>
+            <td>6.3</td>
+            <td>0.6</td>
+            <td>5.3</td>
+          </tr>
+          <tr>
+            <td>Leite de soja</td>
+            <td>100</td>
+            <td>33</td>
+            <td>3.3</td>
+            <td>1.7</td>
+            <td>1.7</td>
+          </tr>
+          <tr>
+            <td>Amêndoas</td>
+            <td>28</td>
+            <td>161</td>
+            <td>6</td>
+            <td>6</td>
+            <td>14</td>
+          </tr>
+          <tr>
+            <td>Abacate</td>
+            <td>100</td>
+            <td>160</td>
+            <td>2</td>
+            <td>9</td>
+            <td>15</td>
+          </tr>
+          <tr>
+            <td>Brócolis (cozido)</td>
+            <td>100</td>
+            <td>55</td>
+            <td>4.7</td>
+            <td>6</td>
+            <td>0.6</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="tabela-vegano remover">
+      <strong>Tabela vegana</strong>
+      <div style="overflow-x: auto;">
+        <table>
+          <tr>
+            <th>Alimento</th>
+            <th>Porção (g)</th>
+            <th>Calorias (kcal)</th>
+            <th>Proteínas (g)</th>
+            <th>Carboidratos (g)</th>
+            <th>Gorduras (g)</th>
+          </tr>
+          <tr>
+            <td>Arroz integral (cozido)</td>
+            <td>100</td>
+            <td>123</td>
+            <td>2.6</td>
+            <td>25.6</td>
+            <td>0.9</td>
+          </tr>
+          <tr>
+            <td>Feijão preto (cozido)</td>
+            <td>100</td>
+            <td>132</td>
+            <td>8.7</td>
+            <td>23.8</td>
+            <td>0.5</td>
+          </tr>
+          <tr>
+            <td>Grão-de-bico (cozido)</td>
+            <td>100</td>
+            <td>164</td>
+            <td>8.9</td>
+            <td>27.4</td>
+            <td>2.6</td>
+          </tr>
+          <tr>
+            <td>Lentilha (cozida)</td>
+            <td>100</td>
+            <td>116</td>
+            <td>9</td>
+            <td>20</td>
+            <td>0.4</td>
+          </tr>
+          <tr>
+            <td>Tofu</td>
+            <td>100</td>
+            <td>76</td>
+            <td>8</td>
+            <td>1.9</td>
+            <td>4.8</td>
+          </tr>
+          <tr>
+            <td>Leite de soja</td>
+            <td>100</td>
+            <td>33</td>
+            <td>3.3</td>
+            <td>1.7</td>
+            <td>1.7</td>
+          </tr>
+          <tr>
+            <td>Leite de amêndoa</td>
+            <td>240</td>
+            <td>60</td>
+            <td>1</td>
+            <td>8</td>
+            <td>2.5</td>
+          </tr>
+          <tr>
+            <td>Abacate</td>
+            <td>100</td>
+            <td>160</td>
+            <td>2</td>
+            <td>9</td>
+            <td>15</td>
+          </tr>
+          <tr>
+            <td>Brócolis (cozido)</td>
+            <td>100</td>
+            <td>55</td>
+            <td>4.7</td>
+            <td>6</td>
+            <td>0.6</td>
+          </tr>
+          <tr>
+            <td>Quinoa (cozida)</td>
+            <td>185</td>
+            <td>222</td>
+            <td>8.1</td>
+            <td>39.4</td>
+            <td>3.6</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="tabela-lactose remover">
+      <strong>Tabela intolerante à lactose</strong>
+      <div style="overflow-x: auto;">
+        <table>
+          <tr>
+            <th>Alimento</th>
+            <th>Porção (g)</th>
+            <th>Calorias (kcal)</th>
+            <th>Proteínas (g)</th>
+            <th>Carboidratos (g)</th>
+            <th>Gorduras (g)</th>
+          </tr>
+          <tr>
+            <td>Arroz (cozido)</td>
+            <td>100</td>
+            <td>130</td>
+            <td>2.4</td>
+            <td>28</td>
+            <td>0.3</td>
+          </tr>
+          <tr>
+            <td>Feijão (cozido)</td>
+            <td>100</td>
+            <td>116</td>
+            <td>7.5</td>
+            <td>20.4</td>
+            <td>0.8</td>
+          </tr>
+          <tr>
+            <td>Frango (peito, sem pele)</td>
+            <td>100</td>
+            <td>165</td>
+            <td>31</td>
+            <td>0</td>
+            <td>3.6</td>
+          </tr>
+          <tr>
+            <td>Peixe (salmão, assado)</td>
+            <td>100</td>
+            <td>206</td>
+            <td>22</td>
+            <td>0</td>
+            <td>13</td>
+          </tr>
+          <tr>
+            <td>Carne bovina magra (cozida)</td>
+            <td>100</td>
+            <td>250</td>
+            <td>26</td>
+            <td>0</td>
+            <td>15</td>
+          </tr>
+          <tr>
+            <td>Ovo (cozido)</td>
+            <td>50</td>
+            <td>78</td>
+            <td>6.3</td>
+            <td>0.6</td>
+            <td>5.3</td>
+          </tr>
+          <tr>
+            <td>Maçã</td>
+            <td>182</td>
+            <td>52</td>
+            <td>0.3</td>
+            <td>14</td>
+            <td>0.2</td>
+          </tr>
+          <tr>
+            <td>Banana</td>
+            <td>118</td>
+            <td>89</td>
+            <td>1.1</td>
+            <td>23</td>
+            <td>0.3</td>
+          </tr>
+          <tr>
+            <td>Brócolis (cozido)</td>
+            <td>100</td>
+            <td>55</td>
+            <td>4.7</td>
+            <td>6</td>
+            <td>0.6</td>
+          </tr>
+          <tr>
+            <td>Abacate</td>
+            <td>100</td>
+            <td>160</td>
+            <td>2</td>
+            <td>9</td>
+            <td>15</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="tabela-gluten remover">
+      <strong>Tabela intolerante à glúten</strong>
+      <div style="overflow-x: auto;">
+        <table>
+          <tr>
+            <th>Alimento</th>
+            <th>Porção (g)</th>
+            <th>Calorias (kcal)</th>
+            <th>Proteínas (g)</th>
+            <th>Carboidratos (g)</th>
+            <th>Gorduras (g)</th>
+          </tr>
+          <tr>
+            <td>Arroz (cozido)</td>
+            <td>100</td>
+            <td>130</td>
+            <td>2.4</td>
+            <td>28</td>
+            <td>0.3</td>
+          </tr>
+          <tr>
+            <td>Feijão (cozido)</td>
+            <td>100</td>
+            <td>116</td>
+            <td>7.5</td>
+            <td>20.4</td>
+            <td>0.8</td>
+          </tr>
+          <tr>
+            <td>Frango (peito, sem pele)</td>
+            <td>100</td>
+            <td>165</td>
+            <td>31</td>
+            <td>0</td>
+            <td>3.6</td>
+          </tr>
+          <tr>
+            <td>Peixe (salmão, assado)</td>
+            <td>100</td>
+            <td>206</td>
+            <td>22</td>
+            <td>0</td>
+            <td>13</td>
+          </tr>
+          <tr>
+            <td>Carne bovina magra (cozida)</td>
+            <td>100</td>
+            <td>250</td>
+            <td>26</td>
+            <td>0</td>
+            <td>15</td>
+          </tr>
+          <tr>
+            <td>Ovo (cozido)</td>
+            <td>50</td>
+            <td>78</td>
+            <td>6.3</td>
+            <td>0.6</td>
+            <td>5.3</td>
+          </tr>
+          <tr>
+            <td>Leite (desnatado)</td>
+            <td>100</td>
+            <td>35</td>
+            <td>3.4</td>
+            <td>4.8</td>
+            <td>0.2</td>
+          </tr>
+          <tr>
+            <td>Maçã</td>
+            <td>182</td>
+            <td>52</td>
+            <td>0.3</td>
+            <td>14</td>
+            <td>0.2</td>
+          </tr>
+          <tr>
+            <td>Banana</td>
+            <td>118</td>
+            <td>89</td>
+            <td>1.1</td>
+            <td>23</td>
+            <td>0.3</td>
+          </tr>
+          <tr>
+            <td>Brócolis (cozido)</td>
+            <td>100</td>
+            <td>55</td>
+            <td>4.7</td>
+            <td>6</td>
+            <td>0.6</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  
+    <button class="btn-calc-nov">Calcular novamente</button>
+  </div>
+ 
+  <script src="index.js"></script>
+
+  <footer>
+    Todos os Direitos Reservados ©OnNutri Online 2024.
+  </footer>
+</body>
+</html>
