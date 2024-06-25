@@ -21,6 +21,7 @@ body{
     margin: auto;
     box-shadow: 0px 0px 4px 5px rgba(0, 0, 0, 0.324);
     margin: auto;
+    border: 3px solid black;
 }
 #nome{
     font-size: 40px;
