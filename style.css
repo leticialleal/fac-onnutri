@@ -163,42 +163,9 @@ main {
 html {
     font-family: sans-serif;
 }
-  
-table, th, tr, td {
-    border-collapse: collapse; 
-    border: 1px solid black;
-    padding: 10px;
-    margin: 10px;
-    text-align: center;
-}
-
-button {
-    width: -webkit-fill-available;
-    margin: 20px 10%;
-    padding: 8px;
-    border: 0;
-    border-radius: 10px;
-    background-color: #3BD681;
-    font-weight: bolder;
-    color: white;
-    font-size: 16px;
-}
-
-input::placeholder{
-    font-size: 14px;
-}
-
-input{
-    accent-color: #1D653D;
-}
 
 strong {
     margin: 10px;
-}
-
-b {
-    font-weight: 800;
-    color: #1D653D;
 }
 
 .form {
@@ -214,30 +181,51 @@ b {
     border: 3px solid black;
 }
 
+.input-number {
+    width: -webkit-fill-available;
+    margin: 0 10%;
+}
+
+input::placeholder{
+    font-size: 14px;
+}
+
 .form .radio {
     display: flex;
     flex-direction: column;
-}
-
-.remover {
-    display: none;
-}
-
-.btn-calc-nov {
-    display: none;
-}
-
-.aparecer {
-    display: block;
 }
 
 .input-radio {
     display: contents;
 }
 
-.input-number {
+input{
+    accent-color: #1D653D;
+}
+
+button {
     width: -webkit-fill-available;
-    margin: 0 10%;
+    margin: 20px 10%;
+    padding: 8px;
+    border: 0;
+    border-radius: 10px;
+    background-color: #3BD681;
+    font-weight: bolder;
+    color: white;
+    font-size: 16px;
+}
+
+b {
+    font-weight: 800;
+    color: #1D653D;
+}
+
+table, th, tr, td {
+    border-collapse: collapse; 
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
 }
 
 .tabelas {
@@ -245,15 +233,25 @@ b {
     margin: 10px auto;
     background-color: white;
     border: 3px solid black;
-}
-
-.results {
     display: flex;
     flex-direction: column;
+    align-items: center;
     text-align: center;
 }
 
-@media(max-width: 480px) {
+.btn-calc-nov {
+    display: none;
+}
+
+.remover {
+    display: none;
+}
+
+.aparecer {
+    display: block;
+}
+
+@media(max-width: 425px) {
     #contato {
         flex-direction: column;
         align-items: center;
@@ -268,4 +266,3 @@ b {
         flex-direction: column;
     }
 }
-
