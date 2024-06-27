@@ -201,6 +201,7 @@ input::placeholder{
 
 input{
     accent-color: #1D653D;
+    cursor: pointer;
 }
 
 button {
@@ -213,6 +214,10 @@ button {
     font-weight: bolder;
     color: white;
     font-size: 16px;
+}
+
+button:hover {
+    cursor: pointer;
 }
 
 b {
