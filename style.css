@@ -220,22 +220,19 @@ b {
     color: #1D653D;
 }
 
-table, th, tr, td {
-    border-collapse: collapse; 
-    border: 1px solid black;
-    padding: 10px;
-    margin: 10px;
-    text-align: center;
-}
-
 .tabelas {
     padding: 10px;
     margin: 10px auto;
     background-color: white;
     border: 3px solid black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    text-align: center;
+}
+
+table, th, tr, td {
+    border-collapse: collapse; 
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px auto;
     text-align: center;
 }
 
